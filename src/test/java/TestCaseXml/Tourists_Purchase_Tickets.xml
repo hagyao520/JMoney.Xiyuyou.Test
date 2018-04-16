@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<unit id="Tourists_Purchase_Tickets" desc="西域游-PC游客端自动购买门票流程">
+ 
+     <case 
+        id="前置条件" 
+        name="验证在数据库中，修改当前用户所有合同为取消状态后，可以正常修改成功" cancel="true">
+        <step action="db-update" value="update cs_credit set STATUS='t' where ID_PERSON=14703550" desc="修改当前用户所有合同为取消状态成功！"/>
+    </case>
+   
+	<case 
+	    id="case1" 
+	    name="验证在火狐浏览器中，输入新疆旅游系统域名后，可以正常访问">
+		<step action="get" value="http://travel.www.szjqb.net/login" desc="访问新疆旅游系统网站域名"/>
+		<step action="check" locator="xpath=.//*[@id='root']/div/div[1]/div/h4/a" expect="新疆旅游" message="访问失败(实际结果和预期结果不一致)" caseid="case1" desc="检查输入正确的域名后，是否成功进入登录界面"/>
+	</case>
+			
+	<case 
+	    id="case2" 
+	    name="验证在登录界面，输入正确的账号和密码，点击登录按钮后，可以正常跳转至首页主界面">
+	    <step action="input" locator="xpath=.//*[@id='root']/div/div[1]/div/div[2]/ul/li[1]/input" value="18688888888" desc="输入正确的账号"/>
+	    <step action="wait-forced" value="1000" desc="强制等待2秒"/>
+	    <step action="input" locator="xpath=.//*[@id='root']/div/div[1]/div/div[2]/ul/li[2]/input" value="612425" desc="输入正确的密码"/>
+	    <step action="wait-forced" value="1000" desc="强制等待2秒"/>
+	    <step action="click" locator="xpath=.//*[@id='root']/div/div[1]/div/div[2]/ul/button" desc="点击登录按钮"/>
+	    <step action="wait-implicit" value="5000" desc="隐性等待5秒"/>
+	    <step action="check" locator="xpath=.//*[@id='root']/div/div[1]/div[1]/div/div/div[3]/div/div/div[4]/span" expect="18688888888" message="登录失败(实际结果和预期结果不一致)" caseid="case2" desc="检查在登录界面，输入正确的账号和密码，点击登录按钮后，是否可以正常登录并进入系统首页主界面"/>
+	</case>
+	
+	<case 
+	    id="case3" 
+	    name="验证在首页界面搜索栏中，输入对应景点名称，选择对应景点后，可以正常搜索且进入景点详情界面">
+		<step action="click" locator="xpath=.//*[@id='root']/div/div[1]/div[2]/div[1]/div/ul/li[2]/button" desc="点击神仙湾页面选项按钮"/>
+		<step action="input" locator="xpath=.//*[@id='root']/div/div[1]/div[2]/div[2]/div[1]/input" value="阿瓦提丝绸古道" desc="输入阿瓦提丝绸古道景点"/>
+        <step action="click" locator="xpath=.//*[@id='root']/div/div[1]/div[2]/div[2]/div[2]/ul/li[1]" desc="选择阿瓦提丝绸古道景点"/>
+	    <step action="wait-implicit" value="5000" desc="隐性等待5秒"/>
+		<step action="check" locator="xpath=.//*[@id='root']/div/div[1]/div[2]/div[3]/div[2]/div[2]/div[1]/span[1]" expect="开放时间" message="进入景点详情界面失败(实际结果和预期结果不一致)" caseid="case3" desc="检查在首页界面搜索栏中，输入对应景点名称，选择对应景点后，是否可以正常进入景点详情界面"/>
+	</case>
+	
+	<case
+	    id="case4"
+	    name="验证在景点详情界面，选择对应景点票务组合后，可以正常进入门票购买界面">
+	    <step action="click" locator="xpath=.//*[@id='ticket']/div/div[1]/p[1]/span" desc="选择阿瓦提丝绸古道票务组合"/>
+	    <step action="check" locator="xpath=.//*[@id='custom-route']/div[2]/div[2]/div[1]/div[2]/div[9]/button" expect="立即预订" message="进入门票购买界面失败(实际结果和预期结果不一致)" caseid="case4" desc="检查在景点详情界面，选择对应景点票务组合后，是否可以正常进入门票购买界面"/>       
+	</case>
+	
+	<case
+	    id="case5"
+	    name="验证在门票购买界面，选择对应门票类型，适用人群，出行日期等信息，点击立即预订按钮后，可以正常进入提交订单界面">
+	    <step action="click" locator="xpath=.//*[@id='custom-route']/div[2]/div[2]/div[1]/div[2]/div[9]/button" desc="点击立即预订按钮"/>
+	    <step action="wait-implicit" value="5000" desc="隐性等待5秒"/>
+	    <step action="check" locator="xpath=.//*[@id='message-write']/div[2]/div[3]/div[1]/p/span[1]" expect="出行人信息*" message="进入提交订单界面失败(实际结果和预期结果不一致)" caseid="case5" desc="在门票购买界面，选择对应门票类型，适用人群，出行日期等信息，点击立即预订按钮后，是否可以正常进入提交订单界面"/>
+	</case>
+	
+	<case
+	    id="case6"
+	    name="验证在提交订单界面，选择输入对应出行人信息和预定人信息，点击支付按钮后，可以正常进入快捷支付界面">
+		<!-- 出行人信息 -->
+	    <step action="input" locator="xpath=.//*[@id='message-write']/div[2]/div[3]/div[2]/div/div[1]/input" value="时雪" desc="输入出行人姓名"/>
+	    <step action="input" locator="xpath=.//*[@id='message-write']/div[2]/div[3]/div[2]/div/div[2]/input" value="141023198202231927" desc="输入出行人身份证"/>
+		
+		<!-- 预定人信息 -->
+	    <step action="input" locator="xpath=.//*[@id='message-write']/div[2]/div[4]/div[2]/input" value="时夏" desc="输入预定人姓名"/>
+	    <step action="input" locator="xpath=.//*[@id='message-write']/div[2]/div[4]/div[3]/input" value="shixia@163.com" desc="输入预定人邮箱"/>
+	    <step action="input" locator="xpath=.//*[@id='message-write']/div[2]/div[4]/div[4]/input" value="18688888888" desc="输入预定人手机"/>
+	    <step action="click" locator="xpath=.//*[@id='message-write']/div[2]/div[4]/div[4]/div/button" desc="点击获取验证码按钮"/>	
+	    <step action="wait-forced" value="3000" desc="强制等待3秒"/>
+	    <step action="db-querym" details="key:msgcode" value="SELECT MSG_CODE FROM client_msg_code WHERE phone='18688888888' ORDER BY created_at DESC" desc="进行数据库操作，根据手机号查询短信验证码信息，并保存记录到本地"/>
+		<step action="input" locator="xpath=.//*[@id='message-write']/div[2]/div[4]/div[4]/div/input" value="${msgcode[0].MSG_CODE}" desc="输入短信验证码"/>
+	    <step action="click" locator="xpath=.//*[@id='message-write']/div[2]/div[6]/label/span[1]/input" desc="勾选服务协议选项按钮"/>
+	    <step action="click" locator="xpath=.//*[@id='message-write']/div[2]/div[7]/button" desc="点击支付按钮"/>
+	    <step action="wait-implicit" value="5000" desc="隐性等待5秒"/>
+	    <step action="check" locator="xpath=.//*[@id='payment']/div[2]/div[3]/button" expect="快捷支付" message="进入快捷支付界面失败(实际结果和预期结果不一致)" caseid="case6" desc="检查在提交订单界面，选择输入对应出行人信息和预定人信息，点击支付按钮后，是否可以正常进入快捷支付界面"/>
+	</case>
+	
+	<case
+	    id="case7"
+	    name="验证在快捷支付界面，选择对应支付方式，点击快捷支付按钮后，可以正常进入二维码扫描支付界面">
+	    <step action="set" details="key:order_sn" locator="xpath=.//*[@id='payment']/div[2]/div[2]/div/div[1]/div[1]/div/p/span[2]" desc="获取订单号码信息，设置值到全局"/>
+	    <step action="click" locator="xpath=.//*[@id='payment']/div[2]/div[2]/div/div[2]/div/div/label[2]/span[1]/span" desc="选择支付宝方式"/>
+	    <step action="click" locator="xpath=.//*[@id='payment']/div[2]/div[3]/button" desc="点击快捷支付按钮"/>
+	    <step action="wait-implicit" value="5000" desc="隐性等待5秒"/>
+	    <step action="check" locator="xpath=.//*[@id='J_qrPayArea']/div[1]/div[1]" expect="扫一扫付款（元）" message="进入二维码扫描支付界面失败(实际结果和预期结果不一致)" caseid="case7" desc="检查在快捷支付界面，选择对应支付方式，点击快捷支付按钮后，是否可以正常进入二维码扫描支付界面"/>
+	</case>
+	
+	<case
+	    id="case8"
+	    name="验证在二维码扫描支付界面，调用后台支付接口后，可以自动支付成功并跳转至支付成功界面">
+	    <step action="send-post" url="https://travel.api.szjqb.net/api/Web/Order/completes" body="order_sn" value="${order_sn}" desc="发送支付接口请求，实现自动支付"/>
+	    <step action="wait-forced" value="3000" desc="强制等待3秒"/>
+		<step action="keybg" key="BACK_SPACE" desc="返回订单支付界面"/>
+		<step action="wait-implicit" value="5000" desc="隐性等待5秒"/>
+	    <step action="check" locator="xpath=.//*[@id='result']/div[2]/div[2]/div[1]/div" expect="支付成功!" message="进入支付成功界面失败(实际结果和预期结果不一致)" caseid="case8" desc="检查在二维码扫描支付界面，调用后台支付接口后，是否可以自动支付成功并跳转至支付成功界面"/>
+	</case>
+	
+	<case
+	    id="case9"
+	    name="验证在支付成功界面，点击查看详情按钮后，可以正常跳转至个人中心-全部订单-订单详情界面">
+		<step action="click" locator="xpath=.//*[@id='result']/div[2]/div[2]/div[2]/p[3]/a[2]" desc="点击查看详情按钮"/>
+	    <step action="wait-implicit" value="5000" desc="隐性等待5秒"/>
+	    <step action="check" locator="xpath=.//*[@id='order-detail']/div[1]/p/span" expect="订单详情" message="进入订单详情界面失败(实际结果和预期结果不一致)" caseid="case9" desc="检查在支付成功界面，点击查看详情按钮后，是否可以正常跳转至个人中心-全部订单-订单详情界面"/>
+	</case>
+	
+	<case
+	    id="case_10"
+	    name="验证在订单详情界面，对应订单信息显示正确，包含(订单名称，订单编号，总价，订单状态，取票码，商品类型，游玩时间，商品数量，商品价格，商品状态，出现人信息，联系人信息)">
+	    <step action="check" locator="xpath=.//*[@id='order-detail']/div[2]/div[1]/p" expect="阿瓦提丝绸古道" message="订单名称显示错误(实际结果和预期结果不一致)" caseid="case10" desc="检查在订单详情界面，订单名称是否显示正确"/>
+        <step action="check" locator="xpath=.//*[@id='order-detail']/div[2]/div[1]/div/span[1]" expect="订单编号：${order_sn}" message="订单编号显示错误(实际结果和预期结果不一致)" caseid="case10" desc="检查在订单详情界面，订单编号是否显示正确"/>
+        <step action="check" locator="xpath=.//*[@id='order-detail']/div[2]/div[1]/div/span[2]" expect="总价：0.01" message="总价显示错误(实际结果和预期结果不一致)" caseid="case10" desc="检查在订单详情界面，总价是否显示正确"/>
+        <step action="check" locator="xpath=.//*[@id='order-detail']/div[2]/div[1]/div/span[3]" expect="订单状态：已支付" message="订单状态显示错误(实际结果和预期结果不一致)" caseid="case10" desc="检查在订单详情界面，订单状态是否显示正确"/>
+        
+        <step action="db-querym" details="key:code" value="SELECT CODE FROM `order` WHERE order_sn='25535545992020728'" desc="进行数据库操作，根据订单编号查询取票码信息，并保存记录到本地"/>
+        <step action="check" locator="xpath=.//*[@id='order-detail']/div[2]/div[1]/div/span[4]" expect="取票码：${code[0].CODE}" message="取票码显示错误(实际结果和预期结果不一致)" caseid="case10" desc="检查在订单详情界面，取票码是否显示正确"/>
+       
+        <step action="check" locator="xpath=.//*[@id='order-detail']/div[2]/div[2]/div/div/div/div/div/table/tbody/tr/td[1]/div" expect="阿瓦提丝绸古道" message="商品名称显示错误(实际结果和预期结果不一致)" caseid="case10" desc="检查在订单详情界面，商品名称是否显示正确"/>
+        <step action="check" locator="xpath=.//*[@id='order-detail']/div[2]/div[2]/div/div/div/div/div/table/tbody/tr/td[2]" expect="门票" message="商品类型显示错误(实际结果和预期结果不一致)" caseid="case10" desc="检查在订单详情界面，商品类型是否显示正确"/>
+        <step action="check" locator="xpath=.//*[@id='order-detail']/div[2]/div[2]/div/div/div/div/div/table/tbody/tr/td[3]" expect="2018-03-30" message="游玩时间显示错误(实际结果和预期结果不一致)" caseid="case10" desc="检查在订单详情界面，游玩时间是否显示正确"/>
+        <step action="check" locator="xpath=.//*[@id='order-detail']/div[2]/div[2]/div/div/div/div/div/table/tbody/tr/td[4]" expect="1" message="商品数量显示错误(实际结果和预期结果不一致)" caseid="case10" desc="检查在订单详情界面，商品数量是否显示正确"/>
+        <step action="check" locator="xpath=.//*[@id='order-detail']/div[2]/div[2]/div/div/div/div/div/table/tbody/tr/td[5]/span" expect="¥0.01" message="商品价格显示错误(实际结果和预期结果不一致)" caseid="case10" desc="检查在订单详情界面，商品价格是否显示正确"/>
+        <step action="check" locator="xpath=.//*[@id='order-detail']/div[2]/div[2]/div/div/div/div/div/table/tbody/tr/td[6]" expect="待出票" message="商品状态显示错误(实际结果和预期结果不一致)" caseid="case10" desc="检查在订单详情界面，商品状态是否显示正确"/>
+        <step action="check" locator="xpath=.//*[@id='order-detail']/div[2]/div[3]/p[2]/span" expect="阿瓦提丝绸古道" message="出现人信息显示错误(实际结果和预期结果不一致)" caseid="case10" desc="检查在订单详情界面，出现人信息是否显示正确"/>
+        <step action="check" locator="xpath=.//*[@id='order-detail']/div[2]/div[4]/p[2]/span[1]" expect="中文姓名:时夏" message="联系人姓名显示错误(实际结果和预期结果不一致)" caseid="case10" desc="检查在订单详情界面，联系人姓名是否显示正确"/>
+        <step action="check" locator="xpath=.//*[@id='order-detail']/div[2]/div[4]/p[2]/span[2]" expect="联系电话:18688888888" message="联系人电话显示错误(实际结果和预期结果不一致)" caseid="case10" desc="检查在订单详情界面，联系人电话是否显示正确"/>
+        <step action="check" locator="xpath=.//*[@id='order-detail']/div[2]/div[4]/p[2]/span[3]" expect="邮箱:shixia@163.com" message="联系人邮箱显示错误(实际结果和预期结果不一致)" caseid="case10" desc="检查在订单详情界面，联系人邮箱是否显示正确"/>
+	</case>
+	
+	<case
+	    id="case_11"
+	    name="验证在订单详情界面，点击退票按钮，输入对应退款说明和选择对应退款图片，点击提交按钮后，可以正常申请退款成功且自动跳转至退款管理界面">
+        <step action="input" locator="xpath=.//*[@id='refund']/div[2]/div[2]/div[2]/textarea" value="个人原因，无法出行" desc="输入退款说明"/>
+		<step action="click" locator="xpath=.//*[@id='refund']/div[2]/div[3]/div[2]/div/button" desc="点击上传图片按钮"/>
+		<step action=".exe"  value="D:\\King\\Eclipse\\JMoney.Xiyuyou.Test\\Plug-in\\AutoIT\\退款照片\\退款照片.exe" desc="选择退款照片AutoIT.exe文件路径"/>
+	    <step action="wait-implicit" value="5000" desc="隐性等待5秒"/>
+	    <step action="click" locator="xpath=.//*[@id='refund']/div[2]/div[4]" desc="点击提交按钮"/>
+	    <step action="check" locator="xpath=.//*[@id='page-inner']/div/div/div[1]/div[1]/button" expect="获取结果" message="申请退款失败(实际结果和预期结果不一致)" desc="检查在订单详情界面，点击退票按钮，输入对应退款说明和选择对应退款图片，点击提交按钮后，是否可以正常申请退款成功且自动跳转至退款管理界面"/>
+	</case>
+	
+	<case
+	    id="case_12"
+	    name="验证在订单详情界面，点击退票按钮，输入对应退款说明和选择对应退款图片，点击提交按钮后，可以正常申请退款成功且自动跳转至退款管理界面">
+		<step action="get" value="http://travel.www.szjqb.net" desc="访问新疆旅游系统网站域名"/>
+		<step action="wait-implicit" value="5000" desc="隐性等待5秒"/>
+		<step action="click" locator="xpath=.//*[@id='root']/div/div[1]/div[1]/div/div/div[3]/div/div/div[4]/span" desc="点击上传图片按钮"/>
+		<step action="click" locator="xpath=.//*[@id='root']/div/div[1]/div[1]/div/div/div[3]/div/div/div[4]/div/ul/li[1]/a" desc="点击上传图片按钮"/>
+		<step action="click" locator="xpath=.//*[@id='all-order']/div[3]/div/div/div/div/div/table/tbody/tr[1]/td[7]/div/div/a[1]" desc="点击上传图片按钮"/>
+        <step action="db-querym" details="key:code" value="SELECT CODE FROM `order` WHERE order_sn='25535545992020728'" desc="进行数据库操作，根据订单编号查询取票码信息，并保存记录到本地"/>
+        <step action="check" locator="xpath=.//*[@id='order-detail']/div[2]/div[1]/div/span[4]" expect="取票码：${code[0].CODE}" message="取票码显示错误(实际结果和预期结果不一致)" caseid="case10" desc="检查在订单详情界面，取票码是否显示正确"/> 
+	</case>	
+	
+		<case
+	    id="case_13"
+	    name="验证在订单详情界面，点击退票按钮，输入对应退款说明和选择对应退款图片，点击提交按钮后，可以正常申请退款成功且自动跳转至退款管理界面">
+		<step action="db-querymssh" details="key:code" value="SELECT code FROM `order` WHERE order_sn='2403294306438742020'" desc="进行数据库操作，根据订单编号查询取票码信息，并保存记录到本地"/>
+	</case>
+</unit>

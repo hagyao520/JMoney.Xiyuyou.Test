@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="用户自动购买门票流程"
+           tests="10"
+           failures="10"
+           errors="0"
+           skipped="0"
+           time="0.008">
+  <properties />
+            <testcase name="case7" time="0.000" classname="TestCases.Tourists_Purchase_Tickets">
+                <failure type="java.lang.NullPointerException"
+                  message="(null)"
+              >
+<![CDATA[java.lang.NullPointerException
+  com.jmoney.xiyuyou.service.RunUnitService.getCase(RunUnitService.java:61)
+  com.jmoney.xiyuyou.service.RunUnitService.runCase(RunUnitService.java:71)
+  TestCases.Tourists_Purchase_Tickets.case7(Tourists_Purchase_Tickets.java:66)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+  java.lang.reflect.Method.invoke(Unknown Source)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+  org.testng.internal.InvokeMethodRunnable.runOne(InvokeMethodRunnable.java:54)
+  org.testng.internal.InvokeMethodRunnable.run(InvokeMethodRunnable.java:44)
+  java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+  java.util.concurrent.FutureTask.run(Unknown Source)
+  java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+  java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+  java.lang.Thread.run(Unknown Source)
+]]>
+      </failure>
+
+          </testcase>
+            <testcase name="case2" time="0.001" classname="TestCases.Tourists_Purchase_Tickets">
+                <failure type="java.lang.NullPointerException"
+                  message="(null)"
+              >
+<![CDATA[java.lang.NullPointerException
+  com.jmoney.xiyuyou.service.RunUnitService.getCase(RunUnitService.java:61)
+  com.jmoney.xiyuyou.service.RunUnitService.runCase(RunUnitService.java:71)
+  TestCases.Tourists_Purchase_Tickets.case2(Tourists_Purchase_Tickets.java:36)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+  java.lang.reflect.Method.invoke(Unknown Source)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+  org.testng.internal.InvokeMethodRunnable.runOne(InvokeMethodRunnable.java:54)
+  org.testng.internal.InvokeMethodRunnable.run(InvokeMethodRunnable.java:44)
+  java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+  java.util.concurrent.FutureTask.run(Unknown Source)
+  java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+  java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+  java.lang.Thread.run(Unknown Source)
+]]>
+      </failure>
+
+          </testcase>
+            <testcase name="case4" time="0.000" classname="TestCases.Tourists_Purchase_Tickets">
+                <failure type="java.lang.NullPointerException"
+                  message="(null)"
+              >
+<![CDATA[java.lang.NullPointerException
+  com.jmoney.xiyuyou.service.RunUnitService.getCase(RunUnitService.java:61)
+  com.jmoney.xiyuyou.service.RunUnitService.runCase(RunUnitService.java:71)
+  TestCases.Tourists_Purchase_Tickets.case4(Tourists_Purchase_Tickets.java:48)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+  java.lang.reflect.Method.invoke(Unknown Source)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+  org.testng.internal.InvokeMethodRunnable.runOne(InvokeMethodRunnable.java:54)
+  org.testng.internal.InvokeMethodRunnable.run(InvokeMethodRunnable.java:44)
+  java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+  java.util.concurrent.FutureTask.run(Unknown Source)
+  java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+  java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+  java.lang.Thread.run(Unknown Source)
+]]>
+      </failure>
+
+          </testcase>
+            <testcase name="case6" time="0.001" classname="TestCases.Tourists_Purchase_Tickets">
+                <failure type="java.lang.NullPointerException"
+                  message="(null)"
+              >
+<![CDATA[java.lang.NullPointerException
+  com.jmoney.xiyuyou.service.RunUnitService.getCase(RunUnitService.java:61)
+  com.jmoney.xiyuyou.service.RunUnitService.runCase(RunUnitService.java:71)
+  TestCases.Tourists_Purchase_Tickets.case6(Tourists_Purchase_Tickets.java:60)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+  java.lang.reflect.Method.invoke(Unknown Source)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+  org.testng.internal.InvokeMethodRunnable.runOne(InvokeMethodRunnable.java:54)
+  org.testng.internal.InvokeMethodRunnable.run(InvokeMethodRunnable.java:44)
+  java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+  java.util.concurrent.FutureTask.run(Unknown Source)
+  java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+  java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+  java.lang.Thread.run(Unknown Source)
+]]>
+      </failure>
+
+          </testcase>
+            <testcase name="case_10" time="0.000" classname="TestCases.Tourists_Purchase_Tickets">
+                <failure type="java.lang.NullPointerException"
+                  message="(null)"
+              >
+<![CDATA[java.lang.NullPointerException
+  com.jmoney.xiyuyou.service.RunUnitService.getCase(RunUnitService.java:61)
+  com.jmoney.xiyuyou.service.RunUnitService.runCase(RunUnitService.java:71)
+  TestCases.Tourists_Purchase_Tickets.case_10(Tourists_Purchase_Tickets.java:84)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+  java.lang.reflect.Method.invoke(Unknown Source)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+  org.testng.internal.InvokeMethodRunnable.runOne(InvokeMethodRunnable.java:54)
+  org.testng.internal.InvokeMethodRunnable.run(InvokeMethodRunnable.java:44)
+  java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+  java.util.concurrent.FutureTask.run(Unknown Source)
+  java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+  java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+  java.lang.Thread.run(Unknown Source)
+]]>
+      </failure>
+
+          </testcase>
+            <testcase name="case5" time="0.001" classname="TestCases.Tourists_Purchase_Tickets">
+                <failure type="java.lang.NullPointerException"
+                  message="(null)"
+              >
+<![CDATA[java.lang.NullPointerException
+  com.jmoney.xiyuyou.service.RunUnitService.getCase(RunUnitService.java:61)
+  com.jmoney.xiyuyou.service.RunUnitService.runCase(RunUnitService.java:71)
+  TestCases.Tourists_Purchase_Tickets.case5(Tourists_Purchase_Tickets.java:54)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+  java.lang.reflect.Method.invoke(Unknown Source)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+  org.testng.internal.InvokeMethodRunnable.runOne(InvokeMethodRunnable.java:54)
+  org.testng.internal.InvokeMethodRunnable.run(InvokeMethodRunnable.java:44)
+  java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+  java.util.concurrent.FutureTask.run(Unknown Source)
+  java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+  java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+  java.lang.Thread.run(Unknown Source)
+]]>
+      </failure>
+
+          </testcase>
+            <testcase name="case1" time="0.004" classname="TestCases.Tourists_Purchase_Tickets">
+                <failure type="java.lang.NullPointerException"
+                  message="(null)"
+              >
+<![CDATA[java.lang.NullPointerException
+  com.jmoney.xiyuyou.service.RunUnitService.getCase(RunUnitService.java:61)
+  com.jmoney.xiyuyou.service.RunUnitService.runCase(RunUnitService.java:71)
+  TestCases.Tourists_Purchase_Tickets.case1(Tourists_Purchase_Tickets.java:30)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+  java.lang.reflect.Method.invoke(Unknown Source)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+  org.testng.internal.InvokeMethodRunnable.runOne(InvokeMethodRunnable.java:54)
+  org.testng.internal.InvokeMethodRunnable.run(InvokeMethodRunnable.java:44)
+  java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+  java.util.concurrent.FutureTask.run(Unknown Source)
+  java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+  java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+  java.lang.Thread.run(Unknown Source)
+]]>
+      </failure>
+
+          </testcase>
+            <testcase name="case3" time="0.000" classname="TestCases.Tourists_Purchase_Tickets">
+                <failure type="java.lang.NullPointerException"
+                  message="(null)"
+              >
+<![CDATA[java.lang.NullPointerException
+  com.jmoney.xiyuyou.service.RunUnitService.getCase(RunUnitService.java:61)
+  com.jmoney.xiyuyou.service.RunUnitService.runCase(RunUnitService.java:71)
+  TestCases.Tourists_Purchase_Tickets.case3(Tourists_Purchase_Tickets.java:42)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+  java.lang.reflect.Method.invoke(Unknown Source)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+  org.testng.internal.InvokeMethodRunnable.runOne(InvokeMethodRunnable.java:54)
+  org.testng.internal.InvokeMethodRunnable.run(InvokeMethodRunnable.java:44)
+  java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+  java.util.concurrent.FutureTask.run(Unknown Source)
+  java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+  java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+  java.lang.Thread.run(Unknown Source)
+]]>
+      </failure>
+
+          </testcase>
+            <testcase name="case9" time="0.000" classname="TestCases.Tourists_Purchase_Tickets">
+                <failure type="java.lang.NullPointerException"
+                  message="(null)"
+              >
+<![CDATA[java.lang.NullPointerException
+  com.jmoney.xiyuyou.service.RunUnitService.getCase(RunUnitService.java:61)
+  com.jmoney.xiyuyou.service.RunUnitService.runCase(RunUnitService.java:71)
+  TestCases.Tourists_Purchase_Tickets.case9(Tourists_Purchase_Tickets.java:78)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+  java.lang.reflect.Method.invoke(Unknown Source)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+  org.testng.internal.InvokeMethodRunnable.runOne(InvokeMethodRunnable.java:54)
+  org.testng.internal.InvokeMethodRunnable.run(InvokeMethodRunnable.java:44)
+  java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+  java.util.concurrent.FutureTask.run(Unknown Source)
+  java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+  java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+  java.lang.Thread.run(Unknown Source)
+]]>
+      </failure>
+
+          </testcase>
+            <testcase name="case8" time="0.001" classname="TestCases.Tourists_Purchase_Tickets">
+                <failure type="java.lang.NullPointerException"
+                  message="(null)"
+              >
+<![CDATA[java.lang.NullPointerException
+  com.jmoney.xiyuyou.service.RunUnitService.getCase(RunUnitService.java:61)
+  com.jmoney.xiyuyou.service.RunUnitService.runCase(RunUnitService.java:71)
+  TestCases.Tourists_Purchase_Tickets.case8(Tourists_Purchase_Tickets.java:72)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+  java.lang.reflect.Method.invoke(Unknown Source)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+  org.testng.internal.InvokeMethodRunnable.runOne(InvokeMethodRunnable.java:54)
+  org.testng.internal.InvokeMethodRunnable.run(InvokeMethodRunnable.java:44)
+  java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+  java.util.concurrent.FutureTask.run(Unknown Source)
+  java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+  java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+  java.lang.Thread.run(Unknown Source)
+]]>
+      </failure>
+
+          </testcase>
+  
+  
+  
+</testsuite>
